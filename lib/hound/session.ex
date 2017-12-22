@@ -56,7 +56,7 @@ defmodule Hound.Session do
   @doc "Destroy a session"
   @spec destroy_session(String.t) :: :ok
   def destroy_session(session_id) do
-    make_req(:delete, "session/#{session_id}")
+    make_req(:delete, "session/#{session_id}", %{}, %{safe: true}) # cleanup custom
   end
 
 
